@@ -129,16 +129,3 @@ def generate_test_cases(request: RequirementRequest):
 
     result = parse_llm_json(response, TestCases)
     return result
-
-# def test_missing_field():
-#     # 1. 模拟一个缺了 summary 的响应
-#     mock_response = Response(output_text='{"tasks": ["学习Python"]}') 
-    
-#     # 2. 尝试运行你的函数，看它是否如期“爆炸”
-#     # 注意：这里我们预期它会抛出 HTTPException
-#     try:
-#         parse_llm_json(mock_response, PlanResponse)
-#         assert False, "函数没有报错，这不科学！"
-#     except HTTPException as e:
-#         assert e.status_code == 500  # 检查是不是你代码里写的那个 500
-#         assert "Wrong DataFormat" in e.detail # 检查报错信息
