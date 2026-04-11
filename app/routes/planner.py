@@ -17,3 +17,8 @@ async def generate_plan_route(request: RequirementRequest):
 async def generate_test_cases_route(request: RequirementRequest):
     result = await planner_service.generate_test_cases(request)
     return result
+
+@router.post("/workflow")
+async def workflow_route(request: RequirementRequest):
+    result = await planner_service.generate_workflow(request)
+    return result
